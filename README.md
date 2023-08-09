@@ -64,3 +64,6 @@ Frontend: React.js for interactive components and game mechanics.
 Backend: Node.js with a database (MongoDB or PostgreSQL) for user profiles and progress tracking.
 Game Logic: JavaScript for implementing gameplay mechanics and branching storylines.
 Multimedia: HTML5 audio, CSS animations, and SVG graphics.
+
+Commands:
+-'npm run dev' starts localhost
