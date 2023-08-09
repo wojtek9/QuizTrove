@@ -66,4 +66,4 @@ Game Logic: JavaScript for implementing gameplay mechanics and branching storyli
 Multimedia: HTML5 audio, CSS animations, and SVG graphics.
 
 Commands:
--'npm run dev' starts localhost
+- 'npm run dev' starts localhost
