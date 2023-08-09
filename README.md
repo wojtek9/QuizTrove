@@ -64,4 +64,3 @@ Frontend: React.js for interactive components and game mechanics.
 Backend: Node.js with a database (MongoDB or PostgreSQL) for user profiles and progress tracking.
 Game Logic: JavaScript for implementing gameplay mechanics and branching storylines.
 Multimedia: HTML5 audio, CSS animations, and SVG graphics.
-By creating a language learning adventure game, you'll not only demonstrate your technical expertise but also your ability to create a unique and engaging application that provides real value to users. This project will stand out on your resume and highlight your creativity, gamification skills, and frontend development capabilities.
