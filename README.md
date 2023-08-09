@@ -26,7 +26,7 @@ If you are developing a production application, we recommend updating the config
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-# Idea: Language Learning Adventure Game
+## Idea: Language Learning Adventure Game
 
 Create an immersive web-based language learning adventure game that not only teaches language skills but also engages users through interactive gameplay. This unique project will demonstrate your creativity, frontend development, and game design abilities.
 
