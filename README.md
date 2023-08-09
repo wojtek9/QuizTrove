@@ -63,5 +63,11 @@ Backend: Node.js with a database (MongoDB or PostgreSQL) for user profiles and p
 Game Logic: JavaScript for implementing gameplay mechanics and branching storylines. <br>
 Multimedia: HTML5 audio, CSS animations, and SVG graphics.
 
+### Plan:
+
+- Index page should contain blocks of clickable blocks that show the games that you can play.
+- Possibly a navbar at the top which contains 'home', 'about', 'language' (selects the language u want to learn), 'progress' (shows your progress in the different games, highscores etc)
+
 ### Commands:
+
 - 'npm run dev' starts localhost
