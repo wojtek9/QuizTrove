@@ -1,12 +1,12 @@
-import React from 'react';
-import './App.css';
+import "./App.css";
 import ListGroup from "./components/ListGroup";
 import Login from "./components/LoginView";
+import Navigation from "./components/Navbar";
 
 function App() {
   return (
     <div>
-      <Login></Login>
+      <Navigation></Navigation>
     </div>
   );
 }
