@@ -71,3 +71,6 @@ Multimedia: HTML5 audio, CSS animations, and SVG graphics.
 ### Commands:
 
 - 'npm run dev' starts localhost
+
+### todo:
+- Make login page
