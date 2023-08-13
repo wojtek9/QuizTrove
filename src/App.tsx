@@ -1,13 +1,18 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import ListGroup from "./components/ListGroup";
 import Login from "./components/LoginView";
 import Navigation from "./components/Navbar";
+import Home from "./components/HomeView";
 
 function App() {
   return (
-    <div>
-      <Navigation></Navigation>
-    </div>
+    <BrowserRouter>
+    <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

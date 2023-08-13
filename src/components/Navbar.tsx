@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   MDBNavbar,
   MDBContainer,
@@ -21,7 +22,7 @@ export default function Navigation() {
       style={{ backgroundColor: "rgba(26, 38, 57, 0.3)" }}
     >
       <MDBContainer fluid>
-        <MDBNavbarBrand href="#">Home</MDBNavbarBrand>
+        <MDBNavbarBrand href="/">LanguageGames</MDBNavbarBrand>
         <MDBNavbarToggler
           type="button"
           data-target="#navbarColor02"
@@ -35,7 +36,7 @@ export default function Navigation() {
         <MDBCollapse show={showNavColor} navbar>
           <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
             <MDBNavbarItem>
-              <MDBNavbarLink href="#">Log in</MDBNavbarLink>
+              <MDBNavbarLink href="/Login">Log in</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink href="#">Sign up</MDBNavbarLink>
