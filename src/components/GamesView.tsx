@@ -6,44 +6,90 @@ import {
   MDBCardText,
   MDBCardImage,
   MDBBtn,
+  MDBCol,
+  MDBRow,
+  MDBContainer,
 } from "mdb-react-ui-kit";
 
 function Games() {
   return (
-    <div className="container">
-      <div className="card-wrapper">
-        <MDBCard>
-          <MDBCardImage
-            src="https://mdbootstrap.com/img/new/standard/nature/184.webp"
-            position="top"
-            alt="..."
-          />
-          <MDBCardBody>
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </MDBCardText>
-            <MDBBtn href="#">Button</MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-        <MDBCard>
-          <MDBCardImage
-            src="https://mdbootstrap.com/img/new/standard/nature/184.webp"
-            position="top"
-            alt="..."
-          />
-          <MDBCardBody>
-            <MDBCardTitle>Card title</MDBCardTitle>
-            <MDBCardText>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </MDBCardText>
-            <MDBBtn href="#">Button</MDBBtn>
-          </MDBCardBody>
-        </MDBCard>
-      </div>
-    </div>
+    <MDBContainer className="gamesContainer">
+      <MDBRow className="g-5">
+        {/* col-md-3 determines the size of the column */}
+        <MDBCol className="gamesCol col-md-3 mb-4 d-flex align-items-stretch">
+          <MDBCard className="gamesCard text-center">
+            <MDBCardImage
+              src="/loginimage.jpg"
+              position="top"
+              className="gamesImage"
+              alt="..."
+            />
+            <MDBCardBody>
+              <MDBCardTitle>Card title</MDBCardTitle>
+              <MDBCardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </MDBCardText>
+              <MDBBtn href="#">Button</MDBBtn>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+        <MDBCol className="gamesCol col-md-3 mb-4 d-flex align-items-stretch">
+          <MDBCard className="gamesCard text-center">
+            <MDBCardImage
+              src="https://mdbootstrap.com/img/new/standard/nature/184.webp"
+              position="top"
+              className="gamesImage"
+              alt="..."
+            />
+            <MDBCardBody>
+              <MDBCardTitle>Card title</MDBCardTitle>
+              <MDBCardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </MDBCardText>
+              <MDBBtn href="#">Button</MDBBtn>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+        <MDBCol className="gamesCol col-md-3 mb-4 d-flex align-items-stretch">
+          <MDBCard className="gamesCard text-center">
+            <MDBCardImage
+              src="https://mdbootstrap.com/img/new/standard/nature/184.webp"
+              position="top"
+              className="gamesImage"
+              alt="..."
+            />
+            <MDBCardBody>
+              <MDBCardTitle>Card title</MDBCardTitle>
+              <MDBCardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </MDBCardText>
+              <MDBBtn href="#">Button</MDBBtn>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+        <MDBCol className="gamesCol col-md-3 mb-4 d-flex align-items-stretch">
+          <MDBCard className="gamesCard text-center">
+            <MDBCardImage
+              src="https://mdbootstrap.com/img/new/standard/nature/184.webp"
+              position="top"
+              className="gamesImage"
+              alt="..."
+            />
+            <MDBCardBody>
+              <MDBCardTitle>Card title</MDBCardTitle>
+              <MDBCardText>
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </MDBCardText>
+              <MDBBtn href="#">Button</MDBBtn>
+            </MDBCardBody>
+          </MDBCard>
+        </MDBCol>
+      </MDBRow>
+    </MDBContainer>
   );
 }
 
