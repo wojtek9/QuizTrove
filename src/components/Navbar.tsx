@@ -36,13 +36,13 @@ export default function Navigation() {
         <MDBCollapse show={showNavColor} navbar>
           <MDBNavbarNav className="me-auto mb-2 mb-lg-0">
             <MDBNavbarItem>
-              <MDBNavbarLink href="/Login">Log in</MDBNavbarLink>
+              <MDBNavbarLink href="/login">Log in</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="#">Sign up</MDBNavbarLink>
+              <MDBNavbarLink href="/signup">Sign up</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href="#">Games</MDBNavbarLink>
+              <MDBNavbarLink href="/games">Games</MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBCollapse>
