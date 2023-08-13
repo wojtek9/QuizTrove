@@ -5,6 +5,7 @@ import Navigation from "./components/Navbar";
 import Home from "./components/HomeView";
 import Create from "./components/SignupView";
 import Games from "./components/GamesView";
+import GuessLang from "./components/GuessLangView";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Create />} />
         <Route path="/games" element={<Games />} />
+        <Route path="/guessthelanguage" element={<GuessLang />} />
       </Routes>
     </BrowserRouter>
   );
