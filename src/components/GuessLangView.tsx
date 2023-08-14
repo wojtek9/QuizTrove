@@ -87,8 +87,8 @@ function GuessLang() {
           style={{
             background: "rgba(41, 198, 255, 0.33)",
             border: "0",
-            height: '300px',
-            borderRadius: '50%'
+            height: "300px",
+            borderRadius: "50%",
           }}
           onClick={handleButtonClick}
         >
@@ -132,6 +132,8 @@ function GuessLang() {
                     top: "50%",
                     left: "50%",
                     transform: "translate(-50%, -50%)",
+                    outline: "none",
+                    border: "none",
                   }}
                   autoComplete="off"
                   value={inputValue}
@@ -143,8 +145,17 @@ function GuessLang() {
               </form>
             )}
             {gameCompleted && (
-              <button type="reset" onClick={handleResetBtnClick}>
-                Play again
+              <button
+                type="reset"
+                onClick={handleResetBtnClick}
+                style={{
+                  background: "rgba(41, 198, 255, 0.33)",
+                  border: "0",
+                  height: "150px",
+                  borderRadius: "50%",
+                }}
+              >
+                <h3 style={{ color: "white" }}>Play again</h3>
               </button>
             )}
           </div>
