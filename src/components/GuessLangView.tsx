@@ -9,21 +9,38 @@ function GuessLang() {
   const [inputValue, setInputValue] = useState("");
   const [gameCompleted, setGameCompleted] = useState(false);
 
+  //used for testing
+  const testFunction = async () => {
+    try {
+      const response = await fetch("languages.txt");
+      const content = await response.text();
+      const pairs = content.split("\n").map((line) => line.split("|"));
+
+      console.log(pairs.length);
+    } catch (error) {
+      console.error("Error fetching or processing text file:", error);
+    }
+  };
+  //testFunction();
+
   const handleButtonClick = async () => {
     setBtnVisible(false);
 
     try {
       const response = await fetch("languages.txt");
       const content = await response.text();
-      const pairs = content.split("\n").map((line) => line.split("|"));
+      const allPairs = content.split("\n").map((line) => line.split("|"));
 
       // Shuffle the array using Fisher-Yates algorithm
-      for (let i = pairs.length - 1; i > 0; i--) {
+      for (let i = allPairs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [pairs[i], pairs[j]] = [pairs[j], pairs[i]];
+        [allPairs[i], allPairs[j]] = [allPairs[j], allPairs[i]];
       }
 
-      setLanguageTextPairs(pairs);
+      // Select the first 10 pairs from the shuffled array
+      const selectedPairs = allPairs.slice(0, 10);
+
+      setLanguageTextPairs(selectedPairs);
     } catch (error) {
       console.error("Error fetching or processing text file:", error);
     }
@@ -63,47 +80,75 @@ function GuessLang() {
   }, [btnVisible, currentPairIndex, languageTextPairs]);
 
   return (
-    <MDBContainer className="gamesContainer text-center">
+    <MDBContainer className="text-center">
       {btnVisible ? (
-        <MDBBtn className="guesslangbtn" onClick={handleButtonClick}>
+        <MDBBtn
+          className="guesslangbtn gamesContainer"
+          style={{
+            background: "rgba(41, 198, 255, 0.33)",
+            border: "0",
+            height: '300px',
+            borderRadius: '50%'
+          }}
+          onClick={handleButtonClick}
+        >
           <h1>Play now!</h1>
         </MDBBtn>
       ) : (
-        <div className="form-outline gamesContainer">
-          <div>
-            <h2
-              style={{ paddingBottom: "35px" }}
-              className="guesslangtextappear"
+        <>
+          <div className="langsremaining">
+            <h1
+              className={`langsremainingtext text-center ${
+                gameCompleted ? "blink-animation" : ""
+              }`}
+              style={{
+                position: "fixed",
+                top: "12%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
             >
-              {displayedText}
-            </h2>
+              {currentPairIndex + 1} / {languageTextPairs.length}
+            </h1>
           </div>
-          {!gameCompleted && (
-            <form onSubmit={handleGuess}>
-              <input
-                type="text"
-                id="guessInput"
-                className="form-control"
-                style={{
-                  position: "relative",
-                  width: "400px",
-                  top: "50%",
-                  left: "50%",
-                  transform: "translate(-50%, -50%)",
-                }}
-                autoComplete="off"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-              />
-              <button type="submit">Submit Guess</button>
-            </form>
-          )}
-          {gameCompleted && (
-            <button type="reset" onClick={handleResetBtnClick}>
-              Play again
-            </button>
-          )}
-        </div>
+          <div className="form-outline gamesContainer">
+            <div>
+              <h2
+                style={{ paddingBottom: "65px" }}
+                className="guesslangtextappear"
+              >
+                {displayedText}
+              </h2>
+            </div>
+            {!gameCompleted && (
+              <form onSubmit={handleGuess}>
+                <input
+                  type="text"
+                  id="guessInput"
+                  className="form-control"
+                  style={{
+                    position: "relative",
+                    width: "400px",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%)",
+                  }}
+                  autoComplete="off"
+                  value={inputValue}
+                  onChange={(e) => setInputValue(e.target.value)}
+                />
+                <button className="submitguess" type="submit">
+                  <span className="text">Submit Guess</span>
+                </button>
+              </form>
+            )}
+            {gameCompleted && (
+              <button type="reset" onClick={handleResetBtnClick}>
+                Play again
+              </button>
+            )}
+          </div>
+        </>
       )}
     </MDBContainer>
   );

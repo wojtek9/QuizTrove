@@ -6,7 +6,7 @@ body {
     background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
   
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(to right, rgba(106, 17, 203, 1), rgb(37, 117, 252, 1))
+    background: linear-gradient(to right, rgb(106, 184, 147), rgb(73, 140, 255))
   }
 
   .cascading-right {
@@ -35,4 +35,141 @@ body {
 .guesslangbtn {
   width: 400px;
   height: 250px;
+}
+
+
+/*
+Home page waves
+*/
+
+.header {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.inner-header {
+  height:70vh;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  display: block;
+  width: 100%;
+  height:30vh; 
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)   infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+
+
+@keyframes move-forever {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+.langsremainingtext.blink-animation {
+  animation: blinker 3s linear infinite;
+  color: green;
+  font-size: 100px;
+  margin-top: 50px;
+}
+
+@keyframes blinker {
+  0%, 100% {
+    color:rgb(128, 255, 134);
+  }
+  75% {
+    color: green;
+  }
+  50% {
+    color: rgb(128, 255, 134);
+  }
+  25% {
+    color: green;
+  }
+}
+
+.submitguess {
+  appearance: none;
+  background-color: #6372fd;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Garamond;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1em;
+  margin: 0;
+  opacity: 1;
+  outline: 0;
+  padding: 1.5em 2.2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-rendering: geometricprecision;
+  text-transform: uppercase;
+  transition: opacity 300ms cubic-bezier(.694, 0, 0.335, 1),background-color 100ms cubic-bezier(.694, 0, 0.335, 1),color 100ms cubic-bezier(.694, 0, 0.335, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.submitguess:before {
+  animation: opacityFallbackOut .5s step-end forwards;
+  backface-visibility: hidden;
+  background-color: #0a69e4;
+  clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translateZ(0);
+  transition: clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1), -webkit-clip-path .5s cubic-bezier(.165, 0.84, 0.44, 1);
+  width: 100%;
+}
+
+.submitguess:hover:before {
+  animation: opacityFallbackIn 0s step-start forwards;
+  clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%);
+}
+
+.submitguess:after {
+  background-color: #FFFFFF;
+}
+
+.submitguess span {
+  z-index: 1;
+  position: relative;
 }

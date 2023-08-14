@@ -1,4 +1,20 @@
-english|Hello
-french|Bonjour
-spanish|Hola
-italian|Ciao
+english|The sun sets beautifully over the horizon.
+english|Adventure awaits those who dare to dream.
+english|The smell of freshly baked bread fills the air.
+english|Laughter is the best medicine for the soul.
+english|Time flies when you're having fun exploring.
+french|La vie est belle avec de bons amis.
+french|Le soleil brille au-dessus des montagnes lointaines.
+french|Les étoiles illuminent le ciel nocturne.
+french|L'amour donne du courage pour affronter tout.
+french|Savourons chaque instant comme s'il était le dernier.
+spanish|El mar susurra secretos bajo la luna.
+spanish|La música alegra el corazón y el alma.
+spanish|Las montañas guardan historias de antaño.
+spanish|El tiempo vuela cuando estamos junto a quienes amamos.
+spanish|La sonrisa es el idioma universal de la felicidad.
+italian|Il sole dipinge il cielo con sfumature calde.
+italian|L'amore è la forza che muove il mondo.
+italian|Le montagne ci parlano con il loro silenzio.
+italian|Le risate creano legami che durano per sempre.
+italian|Ogni giorno è un'opportunità per nuove avventure.
