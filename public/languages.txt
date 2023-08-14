@@ -1,0 +1,4 @@
+english|Hello
+french|Bonjour
+spanish|Hola
+italian|Ciao

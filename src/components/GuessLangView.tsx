@@ -1,31 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MDBBtn, MDBContainer } from "mdb-react-ui-kit";
 
-const languages = ["English", "Spanish", "French", "German"]; // List of languages
-const currentlang = ""
-
 function GuessLang() {
-  const [btnVisible, setBtnVisible] = useState(true); // State to manage button visibility
-  const [guessedLanguage, setGuessedLanguage] = useState<string | null>(""); // Initialize with an empty string
-  const handleButtonClick = () => {
-    setBtnVisible(false); // Hide the button when clicked
-  };
+  const [btnVisible, setBtnVisible] = useState(true);
+  const [languageTextPairs, setLanguageTextPairs] = useState<string[][]>([]);
+  const [currentPairIndex, setCurrentPairIndex] = useState(0);
 
-  const handleGuess = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const userGuess = event.target.value;
-    if (userGuess === guessedLanguage) {
-      // Correct guess
-      const randomLanguage = getRandomLanguage();
-      setGuessedLanguage(randomLanguage);
+  const handleButtonClick = async () => {
+    setBtnVisible(false);
+
+    // Fetch the text file and process its content
+    try {
+      const response = await fetch("languages.txt");
+      const content = await response.text();
+      const pairs = content.split("\n").map((line) => line.split("|"));
+      setLanguageTextPairs(pairs);
+    } catch (error) {
+      console.error("Error fetching or processing text file:", error);
     }
   };
 
-  const getRandomLanguage = () => {
-    return languages[Math.floor(Math.random() * languages.length)];
+  const handleGuess = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const userGuess = event.currentTarget.guessInput.value.toLowerCase();
+    const [correctLanguage] = languageTextPairs[currentPairIndex];
+    if (userGuess === correctLanguage.toLowerCase()) {
+      // Correct guess
+      setCurrentPairIndex((prevIndex) => prevIndex + 1);
+    }
   };
+
+  useEffect(() => {
+    if (!btnVisible && currentPairIndex < languageTextPairs.length) {
+      // Display the language text in the <h2> element
+      const [, text] = languageTextPairs[currentPairIndex];
+      document.getElementById("languageText").textContent = text;
+    }
+  }, [btnVisible, currentPairIndex, languageTextPairs]);
+
   return (
     <MDBContainer className="gamesContainer text-center">
-      {btnVisible ? ( // Render the button only if btnVisible is true
+      {btnVisible ? (
         <MDBBtn className="guesslangbtn" onClick={handleButtonClick}>
           <h1>Play now!</h1>
         </MDBBtn>
@@ -36,27 +51,24 @@ function GuessLang() {
               style={{ paddingBottom: "10px" }}
               className="guesslangtextappear"
             >
-              <h2>{getRandomLanguage()}</h2>
+              <h2 id="languageText">Guess the language!</h2>
             </p>
           </div>
-          <input
-            type="text"
-            id="typeText"
-            className="form-control"
-            style={{
-              position: "relative",
-              width: "400px",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%)",
-            }}
-            onChange={(e) => handleGuess(e)}
-          />
-          <label className="form-label guesslanginput" htmlFor="typeText">
-            <p style={{ color: "#c24d2c" }}>
-              <h5>Which language is displayed in the text?</h5>
-            </p>
-          </label>
+          <form onSubmit={handleGuess}>
+            <input
+              type="text"
+              id="guessInput"
+              className="form-control"
+              style={{
+                position: "relative",
+                width: "400px",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+              }}
+            />
+            <button type="submit">Submit Guess</button>
+          </form>
         </div>
       )}
     </MDBContainer>
