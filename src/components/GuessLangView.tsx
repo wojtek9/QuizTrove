@@ -124,6 +124,7 @@ function GuessLang() {
               <form onSubmit={handleGuess}>
                 <input
                   type="text"
+                  autoFocus
                   id="guessInput"
                   className="form-control"
                   style={{

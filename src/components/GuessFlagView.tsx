@@ -99,15 +99,15 @@ function GuessFlag() {
           <div className="form-outline gamesContainer">
             {gameCompleted && (
               <div>
-              <h2
-                style={{ paddingBottom: "65px" }}
-                className="guesslangtextappear"
-              >
-                You've guessed all the flags!
-              </h2>
-            </div>
+                <h2
+                  style={{ paddingBottom: "65px" }}
+                  className="guesslangtextappear"
+                >
+                  You've guessed all the flags!
+                </h2>
+              </div>
             )}
-            
+
             {!gameCompleted && (
               <>
                 <div>
@@ -120,6 +120,7 @@ function GuessFlag() {
                 <form onSubmit={handleGuess}>
                   <input
                     type="text"
+                    autoFocus
                     id="guessInput"
                     className="form-control"
                     style={{

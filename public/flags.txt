@@ -15,7 +15,7 @@ Russia|flags/flag-of-Russia.png
 Saudi Arabia|flags/flag-of-Saudi-Arabia.png
 South Africa|flags/flag-of-South-Africa.png
 South korea|flags/flag-of-Korea-South.png
-Sweden|flags/flags/flag-of-Sweden.png
+Sweden|flags/flag-of-Sweden.png
 Switzerland|flags/flag-of-Switzerland.png
 Turkey|flags/flag-of-Turkey.png
 United Kingdom|flags/flag-of-United-Kingdom.png

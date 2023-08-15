@@ -49,7 +49,7 @@ function Games() {
               <MDBCardTitle>Guess the flag</MDBCardTitle>
               <MDBCardText>
                 Are you good at vexillology? Let's find out. Identifity the flag
-                that is being displayed!
+                that is being displayed.
               </MDBCardText>
               <MDBBtn href="/guesstheflag">Play</MDBBtn>
             </MDBCardBody>
