@@ -73,4 +73,5 @@ Multimedia: HTML5 audio, CSS animations, and SVG graphics.
 - 'npm run dev' starts localhost
 
 ### todo:
-- Make login page
+
+- implement pronounciation of the sentences in guesslang
