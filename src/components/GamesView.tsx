@@ -25,7 +25,9 @@ function Games() {
               alt="..."
             />
             <MDBCardBody>
-              <MDBCardTitle>Guess the language</MDBCardTitle>
+              <MDBCardTitle>
+                Guess the language <br /> from text
+              </MDBCardTitle>
               <MDBCardText>
                 Put your language skills to the test and identify the language
                 spoken in the text.
@@ -43,12 +45,11 @@ function Games() {
               alt="..."
             />
             <MDBCardBody>
-              <MDBCardTitle>Card title</MDBCardTitle>
+              <MDBCardTitle>Guess the flag</MDBCardTitle>
               <MDBCardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                Are you good at vexillology? Let's find out.
               </MDBCardText>
-              <MDBBtn href="#">Button</MDBBtn>
+              <MDBBtn href="/guesstheflag">Play</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>

@@ -1,0 +1,4 @@
+Denmark|globe.png
+Sweden|globe.png
+Germany|globe.png
+France|globe.png
