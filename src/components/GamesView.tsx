@@ -14,20 +14,18 @@ import {
 function Games() {
   return (
     <MDBContainer className="gamesContainer">
-      <MDBRow className="g-5">
+      <MDBRow className="gamesRow g-5">
         {/* col-md-3 determines the size of the column */}
         <MDBCol className="gamesCol col-md-3 mb-4 d-flex align-items-stretch">
           <MDBCard className="gamesCard text-center">
             <MDBCardImage
-              src="globe.png"
+              src="games/guessthelang.jpg"
               position="top"
               className="gamesImage"
               alt="..."
             />
-            <MDBCardBody>
-              <MDBCardTitle>
-                Guess the language <br /> from text
-              </MDBCardTitle>
+            <MDBCardBody className="gamesCardBody">
+              <MDBCardTitle>Guess the language</MDBCardTitle>
               <MDBCardText>
                 Put your language skills to the test and identify the language
                 spoken in the text.
@@ -39,15 +37,19 @@ function Games() {
         <MDBCol className="gamesCol col-md-3 mb-4 d-flex align-items-stretch">
           <MDBCard className="gamesCard text-center">
             <MDBCardImage
-              src="https://mdbootstrap.com/img/new/standard/nature/184.webp"
+              src="globe.png"
               position="top"
               className="gamesImage"
               alt="..."
+              style={{
+                objectFit: "scale-down",
+              }}
             />
-            <MDBCardBody>
+            <MDBCardBody className="gamesCardBody">
               <MDBCardTitle>Guess the flag</MDBCardTitle>
               <MDBCardText>
-                Are you good at vexillology? Let's find out.
+                Are you good at vexillology? Let's find out. Identifity the flag
+                that is being displayed!
               </MDBCardText>
               <MDBBtn href="/guesstheflag">Play</MDBBtn>
             </MDBCardBody>
@@ -61,7 +63,7 @@ function Games() {
               className="gamesImage"
               alt="..."
             />
-            <MDBCardBody>
+            <MDBCardBody className="gamesCardBody">
               <MDBCardTitle>Card title</MDBCardTitle>
               <MDBCardText>
                 Some quick example text to build on the card title and make up
@@ -79,7 +81,7 @@ function Games() {
               className="gamesImage"
               alt="..."
             />
-            <MDBCardBody>
+            <MDBCardBody className="gamesCardBody">
               <MDBCardTitle>Card title</MDBCardTitle>
               <MDBCardText>
                 Some quick example text to build on the card title and make up

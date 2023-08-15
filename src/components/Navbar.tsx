@@ -22,7 +22,7 @@ export default function Navigation() {
       style={{ backgroundColor: "rgba(26, 38, 57, 0.3)" }}
     >
       <MDBContainer fluid>
-        <MDBNavbarBrand href="/">LanguageGames</MDBNavbarBrand>
+        <MDBNavbarBrand href="/">QuizTrove</MDBNavbarBrand>
         <MDBNavbarToggler
           type="button"
           data-target="#navbarColor02"

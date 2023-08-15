@@ -5,7 +5,7 @@ function GuessFlag() {
   const [btnVisible, setBtnVisible] = useState(true);
   const [flagTextPairs, setflagTextPairs] = useState<string[][]>([]);
   const [currentPairIndex, setCurrentPairIndex] = useState(0);
-  const [displayedFlag, setdisplayedFlag] = useState("Guess the flag!");
+  const [displayedFlag, setdisplayedFlag] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [gameCompleted, setGameCompleted] = useState(false);
 
@@ -46,7 +46,6 @@ function GuessFlag() {
         if (currentPairIndex === flagTextPairs.length - 1) {
           setGameCompleted(true); // Mark the game as completed
           console.log("You've guessed all the flags!");
-          setdisplayedFlag("You've guessed all the flags!");
         } else {
           setCurrentPairIndex((prevIndex) => prevIndex + 1);
         }
@@ -98,32 +97,49 @@ function GuessFlag() {
             </h1>
           </div>
           <div className="form-outline gamesContainer">
-            <div>
-              <img src={displayedFlag} alt="flagImage" style={{paddingBottom: '50px'}} />
+            {gameCompleted && (
+              <div>
+              <h2
+                style={{ paddingBottom: "65px" }}
+                className="guesslangtextappear"
+              >
+                You've guessed all the flags!
+              </h2>
             </div>
+            )}
+            
             {!gameCompleted && (
-              <form onSubmit={handleGuess}>
-                <input
-                  type="text"
-                  id="guessInput"
-                  className="form-control"
-                  style={{
-                    position: "relative",
-                    width: "400px",
-                    top: "50%",
-                    left: "50%",
-                    transform: "translate(-50%, -50%)",
-                    outline: "none",
-                    border: "none",
-                  }}
-                  autoComplete="off"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                />
-                <button className="submitguess" type="submit">
-                  <span className="text">Submit Guess</span>
-                </button>
-              </form>
+              <>
+                <div>
+                  <img
+                    src={displayedFlag}
+                    alt="flagImage"
+                    style={{ paddingBottom: "100px" }}
+                  />
+                </div>
+                <form onSubmit={handleGuess}>
+                  <input
+                    type="text"
+                    id="guessInput"
+                    className="form-control"
+                    style={{
+                      position: "relative",
+                      width: "400px",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      outline: "none",
+                      border: "none",
+                    }}
+                    autoComplete="off"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                  />
+                  <button className="submitguess" type="submit">
+                    <span className="text">Submit Guess</span>
+                  </button>
+                </form>
+              </>
             )}
             {gameCompleted && (
               <button

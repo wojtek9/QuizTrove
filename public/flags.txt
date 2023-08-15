@@ -1,4 +1,23 @@
-Denmark|globe.png
-Sweden|globe.png
-Germany|globe.png
-France|globe.png
+Argentina|flags/flag-of-Argentina.png
+Australia|flags/flag-of-Australia.png
+Brazil|flags/flag-of-Brazil.png
+Canada|flags/flag-of-Canada.png
+China|flags/flag-of-China.png
+Denmark|flags/flag-of-Denmark.png
+France|flags/flag-of-France.png
+Germany|flags/flag-of-Germany.png
+India|flags/flag-of-India.png
+Italy|flags/flag-of-Italy.png
+Japan|flags/flag-of-Japan.png
+Mexico|flags/flag-of-Mexico.png
+Netherlands|flags/flag-of-Netherlands.png
+Russia|flags/flag-of-Russia.png
+Saudi Arabia|flags/flag-of-Saudi-Arabia.png
+South Africa|flags/flag-of-South-Africa.png
+South korea|flags/flag-of-Korea-South.png
+Sweden|flags/flags/flag-of-Sweden.png
+Switzerland|flags/flag-of-Switzerland.png
+Turkey|flags/flag-of-Turkey.png
+United Kingdom|flags/flag-of-United-Kingdom.png
+USA|flags/flag-of-United-States-of-America.png
+spain|flags/flag-of-Spain.png

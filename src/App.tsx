@@ -6,7 +6,7 @@ import Home from "./components/HomeView";
 import Create from "./components/SignupView";
 import Games from "./components/GamesView";
 import GuessLang from "./components/GuessLangView";
-import GuessFlag from "./components/guessFlagView";
+import GuessFlag from "./components/GuessFlagView";
 
 function App() {
   return (
