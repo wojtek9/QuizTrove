@@ -37,7 +37,7 @@ function Games() {
         <MDBCol className="gamesCol col-md-3 mb-4 d-flex align-items-stretch">
           <MDBCard className="gamesCard text-center">
             <MDBCardImage
-              src="globe.png"
+              src="games/globe.png"
               position="top"
               className="gamesImage"
               alt="..."

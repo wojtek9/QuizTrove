@@ -1,68 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { MDBBtn, MDBContainer } from "mdb-react-ui-kit";
+import Game from "./GameTemplate";
 
 function GuessFlag() {
-  const [btnVisible, setBtnVisible] = useState(true);
-  const [flagTextPairs, setflagTextPairs] = useState<string[][]>([]);
-  const [currentPairIndex, setCurrentPairIndex] = useState(0);
-  const [displayedFlag, setdisplayedFlag] = useState("");
-  const [inputValue, setInputValue] = useState("");
-  const [gameCompleted, setGameCompleted] = useState(false);
-
-  const handleButtonClick = async () => {
-    setBtnVisible(false);
-
-    try {
-      const response = await fetch("flags.txt");
-      const content = await response.text();
-      const allPairs = content.split("\n").map((line) => line.split("|"));
-
-      // Shuffle the array using Fisher-Yates algorithm
-      for (let i = allPairs.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [allPairs[i], allPairs[j]] = [allPairs[j], allPairs[i]];
-      }
-
-      // Select the first 10 pairs from the shuffled array
-      const selectedPairs = allPairs.slice(0, 10);
-
-      setflagTextPairs(selectedPairs);
-    } catch (error) {
-      console.error("Error fetching or processing text file:", error);
-    }
-  };
-
-  function handleResetBtnClick() {
-    location.reload();
-  }
-
-  const handleGuess = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const userGuess = event.currentTarget.guessInput.value.toLowerCase();
-
-    if (currentPairIndex >= 0 && currentPairIndex < flagTextPairs.length) {
-      const [correctFlag] = flagTextPairs[currentPairIndex];
-      if (userGuess === correctFlag.toLowerCase()) {
-        if (currentPairIndex === flagTextPairs.length - 1) {
-          setGameCompleted(true); // Mark the game as completed
-          console.log("You've guessed all the flags!");
-        } else {
-          setCurrentPairIndex((prevIndex) => prevIndex + 1);
-        }
-      }
-    } else {
-      console.log("No more words or invalid index.");
-    }
-  };
-
-  useEffect(() => {
-    if (!btnVisible && currentPairIndex < flagTextPairs.length) {
-      const [, text] = flagTextPairs[currentPairIndex];
-      console.log(text); // Check the extracted text
-      setdisplayedFlag(text);
-      setInputValue(""); // Clear the input value when a new word appears
-    }
-  }, [btnVisible, currentPairIndex, flagTextPairs]);
+  let file = "flags.txt"
+  let completionText = "You've guessed all the flags!"
+  const {
+    btnVisible,
+    valueTextPairs,
+    currentPairIndex,
+    displayedValue,
+    inputValue,
+    setInputValue,
+    gameCompleted,
+    handleButtonClick,
+    handleResetBtnClick,
+    handleGuess,
+  } = Game(file, completionText);
 
   return (
     <MDBContainer className="text-center">
@@ -93,7 +47,7 @@ function GuessFlag() {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              {currentPairIndex + 1} / {flagTextPairs.length}
+              {currentPairIndex + 1} / {valueTextPairs.length}
             </h1>
           </div>
           <div className="form-outline gamesContainer">
@@ -112,7 +66,7 @@ function GuessFlag() {
               <>
                 <div>
                   <img
-                    src={displayedFlag}
+                    src={displayedValue}
                     alt="flagImage"
                     style={{ paddingBottom: "100px" }}
                   />

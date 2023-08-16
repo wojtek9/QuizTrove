@@ -18,6 +18,6 @@ South korea|flags/flag-of-Korea-South.png
 Sweden|flags/flag-of-Sweden.png
 Switzerland|flags/flag-of-Switzerland.png
 Turkey|flags/flag-of-Turkey.png
-United Kingdom|flags/flag-of-United-Kingdom.png
+UK|flags/flag-of-United-Kingdom.png
 USA|flags/flag-of-United-States-of-America.png
 spain|flags/flag-of-Spain.png

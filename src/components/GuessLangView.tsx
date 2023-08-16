@@ -1,83 +1,41 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { MDBBtn, MDBContainer } from "mdb-react-ui-kit";
+import Game from "./GameTemplate";
 
 function GuessLang() {
-  const [btnVisible, setBtnVisible] = useState(true);
-  const [languageTextPairs, setLanguageTextPairs] = useState<string[][]>([]);
-  const [currentPairIndex, setCurrentPairIndex] = useState(0);
-  const [displayedText, setDisplayedText] = useState("Guess the language!");
-  const [inputValue, setInputValue] = useState("");
-  const [gameCompleted, setGameCompleted] = useState(false);
+  let file = "languages.txt";
+  let completionText = "You've guessed all the languages!";
+  const {
+    btnVisible,
+    valueTextPairs,
+    currentPairIndex,
+    displayedValue,
+    inputValue,
+    setInputValue,
+    gameCompleted,
+    handleButtonClick,
+    handleResetBtnClick,
+    handleGuess,
+  } = Game(file, completionText);
 
-  //used for testing
-  const testFunction = async () => {
-    try {
-      const response = await fetch("languages.txt");
-      const content = await response.text();
-      const pairs = content.split("\n").map((line) => line.split("|"));
+  const handleSoundBtnClick = async () => {
+    if ("speechSynthesis" in window) {
+      // Create a new SpeechSynthesisUtterance instance
+      const speech = new SpeechSynthesisUtterance();
 
-      console.log(pairs.length);
-    } catch (error) {
-      console.error("Error fetching or processing text file:", error);
-    }
-  };
-  //testFunction();
+      // Set the text you want to synthesize
+      speech.text = displayedValue;
 
-  const handleButtonClick = async () => {
-    setBtnVisible(false);
+      // Optional: Set the voice
+      const voices = speechSynthesis.getVoices();
+      speech.voice = voices[1]; // You can choose a different voice from the voices array
 
-    try {
-      const response = await fetch("languages.txt");
-      const content = await response.text();
-      const allPairs = content.split("\n").map((line) => line.split("|"));
-
-      // Shuffle the array using Fisher-Yates algorithm
-      for (let i = allPairs.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [allPairs[i], allPairs[j]] = [allPairs[j], allPairs[i]];
-      }
-
-      // Select the first 10 pairs from the shuffled array
-      const selectedPairs = allPairs.slice(0, 10);
-
-      setLanguageTextPairs(selectedPairs);
-    } catch (error) {
-      console.error("Error fetching or processing text file:", error);
-    }
-  };
-
-  function handleResetBtnClick() {
-    location.reload();
-  }
-
-  const handleGuess = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const userGuess = event.currentTarget.guessInput.value.toLowerCase();
-
-    if (currentPairIndex >= 0 && currentPairIndex < languageTextPairs.length) {
-      const [correctLanguage] = languageTextPairs[currentPairIndex];
-      if (userGuess === correctLanguage.toLowerCase()) {
-        if (currentPairIndex === languageTextPairs.length - 1) {
-          setGameCompleted(true); // Mark the game as completed
-          console.log("You've guessed all the languages!");
-          setDisplayedText("You've guessed all the languages!");
-        } else {
-          setCurrentPairIndex((prevIndex) => prevIndex + 1);
-        }
-      }
+      // Play the synthesized speech
+      speechSynthesis.speak(speech);
     } else {
-      console.log("No more words or invalid index.");
+      console.log("Speech synthesis not supported by this browser.");
     }
   };
-
-  useEffect(() => {
-    if (!btnVisible && currentPairIndex < languageTextPairs.length) {
-      const [, text] = languageTextPairs[currentPairIndex];
-      console.log(text); // Check the extracted text
-      setDisplayedText(text);
-      setInputValue(""); // Clear the input value when a new word appears
-    }
-  }, [btnVisible, currentPairIndex, languageTextPairs]);
 
   return (
     <MDBContainer className="text-center">
@@ -108,7 +66,7 @@ function GuessLang() {
                 transform: "translate(-50%, -50%)",
               }}
             >
-              {currentPairIndex + 1} / {languageTextPairs.length}
+              {currentPairIndex + 1} / {valueTextPairs.length}
             </h1>
           </div>
           <div className="form-outline gamesContainer">
@@ -117,7 +75,7 @@ function GuessLang() {
                 style={{ paddingBottom: "65px" }}
                 className="guesslangtextappear"
               >
-                {displayedText}
+                {displayedValue}
               </h2>
             </div>
             {!gameCompleted && (
@@ -140,6 +98,17 @@ function GuessLang() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                 />
+                <div>
+                  <a>
+                    <img
+                      onClick={handleSoundBtnClick}
+                      src="/logos/earicon.png"
+                      id="earlogo"
+                      alt="flagImage"
+                      style={{ paddingBottom: "20px", cursor: "pointer" }}
+                    />
+                  </a>
+                </div>
                 <button className="submitguess" type="submit">
                   <span className="text">Submit Guess</span>
                 </button>

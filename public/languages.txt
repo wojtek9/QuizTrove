@@ -1,20 +1,20 @@
-english|The sun sets beautifully over the horizon.
-english|Adventure awaits those who dare to dream.
-english|The smell of freshly baked bread fills the air.
-english|Laughter is the best medicine for the soul.
-english|Time flies when you're having fun exploring.
-french|La vie est belle avec de bons amis.
-french|Le soleil brille au-dessus des montagnes lointaines.
-french|Les étoiles illuminent le ciel nocturne.
-french|L'amour donne du courage pour affronter tout.
-french|Savourons chaque instant comme s'il était le dernier.
-spanish|El mar susurra secretos bajo la luna.
-spanish|La música alegra el corazón y el alma.
-spanish|Las montañas guardan historias de antaño.
-spanish|El tiempo vuela cuando estamos junto a quienes amamos.
-spanish|La sonrisa es el idioma universal de la felicidad.
-italian|Il sole dipinge il cielo con sfumature calde.
-italian|L'amore è la forza che muove il mondo.
-italian|Le montagne ci parlano con il loro silenzio.
-italian|Le risate creano legami che durano per sempre.
-italian|Ogni giorno è un'opportunità per nuove avventure.
+english|The sun sets beautifully over the horizon.|0
+english|Adventure awaits those who dare to dream.|0
+english|The smell of freshly baked bread fills the air.|0
+english|Laughter is the best medicine for the soul.|0
+english|Time flies when you're having fun exploring.|0
+french|La vie est belle avec de bons amis.|0
+french|Le soleil brille au-dessus des montagnes lointaines.|0
+french|Les étoiles illuminent le ciel nocturne.|0
+french|L'amour donne du courage pour affronter tout.|0
+french|Savourons chaque instant comme s'il était le dernier.|0
+spanish|El mar susurra secretos bajo la luna.|0
+spanish|La música alegra el corazón y el alma.|0
+spanish|Las montañas guardan historias de antaño.|0
+spanish|El tiempo vuela cuando estamos junto a quienes amamos.|0
+spanish|La sonrisa es el idioma universal de la felicidad.|0
+italian|Il sole dipinge il cielo con sfumature calde.|0
+italian|L'amore è la forza che muove il mondo.|0
+italian|Le montagne ci parlano con il loro silenzio.|0
+italian|Le risate creano legami che durano per sempre.|0
+italian|Ogni giorno è un'opportunità per nuove avventure.|0

@@ -176,3 +176,7 @@ Home page waves
   z-index: 1;
   position: relative;
 }
+
+#earlogo:hover {
+  opacity: 0.65; /* Reduce opacity on hover */
+}
