@@ -16,24 +16,26 @@ function GuessLang() {
     handleButtonClick,
     handleResetBtnClick,
     handleGuess,
+    audio,
   } = Game(file, completionText);
+  const intValue = parseInt(audio, 10); // The second argument (10) specifies the base for parsing
 
+  //doesnt turn off if language == null pls fix jagex
   const handleSoundBtnClick = async () => {
-    if ("speechSynthesis" in window) {
+    if (typeof intValue === "number" && "speechSynthesis" in window) {
       // Create a new SpeechSynthesisUtterance instance
+
       const speech = new SpeechSynthesisUtterance();
 
       // Set the text you want to synthesize
       speech.text = displayedValue;
 
-      // Optional: Set the voice
+      // Voices json
       const voices = speechSynthesis.getVoices();
-      speech.voice = voices[1]; // You can choose a different voice from the voices array
-
-      // Play the synthesized speech
+      speech.voice = voices[intValue];
       speechSynthesis.speak(speech);
     } else {
-      console.log("Speech synthesis not supported by this browser.");
+      console.log("Speech synthesis not supported.");
     }
   };
 

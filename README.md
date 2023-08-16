@@ -26,43 +26,6 @@ If you are developing a production application, we recommend updating the config
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
-## Idea: Language Learning Adventure Game
-
-Create an immersive web-based language learning adventure game that not only teaches language skills but also engages users through interactive gameplay. This unique project will demonstrate your creativity, frontend development, and game design abilities.
-
-Here's a breakdown of the project: <br>
-
-Language Learning Modules: <br>
-Develop interactive language lessons for different proficiency levels, covering vocabulary, grammar, pronunciation, and cultural insights.
-Implement challenges like word puzzles, matching games, quizzes, and voice recognition exercises.
-
-Interactive Storyline: <br>
-Design an engaging storyline where players navigate through different scenarios, solving puzzles and challenges.
-Incorporate dialogues and conversations to practice real-world language usage.
-
-Dynamic Progress Tracking: <br>
-Create a user profile and tracking system that monitors the player's progress and adapts the difficulty of lessons accordingly.
-
-Choice-based Gameplay: <br>
-Let players make choices that impact the storyline and their language learning journey.
-Use React to implement dynamic branching based on player decisions.
-
-Leaderboards and Competitions: <br>
-Integrate a leaderboard system where players can compete based on language proficiency and game completion.
-
-Visual and Audio Assets: <br>
-Incorporate visually appealing graphics and animations to enhance the gaming experience.
-Use HTML5 audio features for language pronunciation exercises.
-
-Social Sharing and Multiplayer Mode: <br>
-Allow players to share their progress and achievements on social media. Implement a multiplayer mode where users can practice language skills with friends.
-
-Technology Stack: <br>
-Frontend: React.js for interactive components and game mechanics. <br>
-Backend: Node.js with a database (MongoDB or PostgreSQL) for user profiles and progress tracking. <br>
-Game Logic: JavaScript for implementing gameplay mechanics and branching storylines. <br>
-Multimedia: HTML5 audio, CSS animations, and SVG graphics.
-
 ### Plan:
 
 - Index page should contain blocks of clickable blocks that show the games that you can play.
@@ -75,3 +38,31 @@ Multimedia: HTML5 audio, CSS animations, and SVG graphics.
 ### todo:
 
 - implement pronounciation of the sentences in guesslang
+
+### SpeechSynthesisUtterance documentation
+
+- voices json (window.speechSynthesis.getVoices()): 
+0: SpeechSynthesisVoice {voiceURI: 'Microsoft Helle - Danish (Denmark)', name: 'Microsoft Helle - Danish (Denmark)', lang: 'da-DK', localService: true, default: true}
+1: SpeechSynthesisVoice {voiceURI: 'Microsoft David - English (United States)', name: 'Microsoft David - English (United States)', lang: 'en-US', localService: true, default: false}
+2: SpeechSynthesisVoice {voiceURI: 'Microsoft Mark - English (United States)', name: 'Microsoft Mark - English (United States)', lang: 'en-US', localService: true, default: false}
+3: SpeechSynthesisVoice {voiceURI: 'Microsoft Zira - English (United States)', name: 'Microsoft Zira - English (United States)', lang: 'en-US', localService: true, default: false}
+4: SpeechSynthesisVoice {voiceURI: 'Microsoft Heami - Korean (Korean)', name: 'Microsoft Heami - Korean (Korean)', lang: 'ko-KR', localService: true, default: false}
+5: SpeechSynthesisVoice {voiceURI: 'Google Deutsch', name: 'Google Deutsch', lang: 'de-DE', localService: false, default: false}
+6: SpeechSynthesisVoice {voiceURI: 'Google US English', name: 'Google US English', lang: 'en-US', localService: false, default: false}
+7: SpeechSynthesisVoice {voiceURI: 'Google UK English Female', name: 'Google UK English Female', lang: 'en-GB', localService: false, default: false}
+8: SpeechSynthesisVoice {voiceURI: 'Google UK English Male', name: 'Google UK English Male', lang: 'en-GB', localService: false, default: false}
+9: SpeechSynthesisVoice {voiceURI: 'Google español', name: 'Google español', lang: 'es-ES', localService: false, default: false}
+10: SpeechSynthesisVoice {voiceURI: 'Google español de Estados Unidos', name: 'Google español de Estados Unidos', lang: 'es-US', localService: false, default: false}
+11: SpeechSynthesisVoice {voiceURI: 'Google français', name: 'Google français', lang: 'fr-FR', localService: false, default: false}
+12: SpeechSynthesisVoice {voiceURI: 'Google हिन्दी', name: 'Google हिन्दी', lang: 'hi-IN', localService: false, default: false}
+13: SpeechSynthesisVoice {voiceURI: 'Google Bahasa Indonesia', name: 'Google Bahasa Indonesia', lang: 'id-ID', localService: false, default: false}
+14: SpeechSynthesisVoice {voiceURI: 'Google italiano', name: 'Google italiano', lang: 'it-IT', localService: false, default: false}
+15: SpeechSynthesisVoice {voiceURI: 'Google 日本語', name: 'Google 日本語', lang: 'ja-JP', localService: false, default: false}
+16: SpeechSynthesisVoice {voiceURI: 'Google 한국의', name: 'Google 한국의', lang: 'ko-KR', localService: false, default: false}
+17: SpeechSynthesisVoice {voiceURI: 'Google Nederlands', name: 'Google Nederlands', lang: 'nl-NL', localService: false, default: false}
+18: SpeechSynthesisVoice {voiceURI: 'Google polski', name: 'Google polski', lang: 'pl-PL', localService: false, default: false}
+19: SpeechSynthesisVoice {voiceURI: 'Google português do Brasil', name: 'Google português do Brasil', lang: 'pt-BR', localService: false, default: false}
+20: SpeechSynthesisVoice {voiceURI: 'Google русский', name: 'Google русский', lang: 'ru-RU', localService: false, default: false}
+21: SpeechSynthesisVoice {voiceURI: 'Google 普通话（中国大陆）', name: 'Google 普通话（中国大陆）', lang: 'zh-CN', localService: false, default: false}
+22: SpeechSynthesisVoice {voiceURI: 'Google 粤語（香港）', name: 'Google 粤語（香港）', lang: 'zh-HK', localService: false, default: false}
+23: SpeechSynthesisVoice {voiceURI: 'Google 國語（臺灣）', name: 'Google 國語（臺灣）', lang: 'zh-TW', localService: false, default: false}
