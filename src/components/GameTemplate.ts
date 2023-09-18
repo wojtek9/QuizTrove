@@ -10,7 +10,7 @@ function Game(file: string, completionText: string) {
   const [audioArr, setAudioArr] = useState<string[]>([]); // Create separate array instead of a tuple because im lazy
   const [audio, setAudio] = useState(""); // Set default audio to US pronounciation. Documentation in readme
 
-  // Everything regarding audio is coded horribly in here. Uses separate key/value pair to associate with the correct string and is converted from string to int
+  // Everything regarding audio is coded horribly in here. Uses separate key/value pair to associate with the correct index and is converted from string to int
 
   const handleButtonClick = async () => {
     setBtnVisible(false);

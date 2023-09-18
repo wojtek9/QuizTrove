@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MouseEventHandler } from "react";
 import { MDBBtn, MDBContainer } from "mdb-react-ui-kit";
 import Game from "./GameTemplate";
 
@@ -20,22 +20,24 @@ function GuessLang() {
   } = Game(file, completionText);
   const intValue = parseInt(audio, 10); // The second argument (10) specifies the base for parsing
 
-  //doesnt turn off if language == null pls fix jagex
-  const handleSoundBtnClick = async () => {
-    if (typeof intValue === "number" && "speechSynthesis" in window) {
+  const handleSoundBtnClick: MouseEventHandler<HTMLImageElement> = async (
+    event
+  ) => {
+    event.preventDefault(); // Prevent the default click behavior if needed
+    if (!isNaN(intValue) && typeof intValue === "number") {
       // Create a new SpeechSynthesisUtterance instance
 
       const speech = new SpeechSynthesisUtterance();
+      // Voices json
+      const voices = speechSynthesis.getVoices();
+      speech.voice = voices[intValue];
 
       // Set the text you want to synthesize
       speech.text = displayedValue;
 
-      // Voices json
-      const voices = speechSynthesis.getVoices();
-      speech.voice = voices[intValue];
       speechSynthesis.speak(speech);
     } else {
-      console.log("Speech synthesis not supported.");
+      console.log("Voice not available");
     }
   };
 
