@@ -8,12 +8,14 @@ import {
   MDBCol,
 } from "mdb-react-ui-kit";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Create() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  async function signUp() {
+  async function handleSignup() {
     let item = { username, password };
     console.log(item);
 
@@ -30,6 +32,7 @@ function Create() {
       if (result.ok) {
         result = await result.json();
         console.log("result", result);
+        navigate("/games");
       } else {
         console.error("Request failed with status: " + result.status);
         // Log more details about the response, if needed.
@@ -72,7 +75,7 @@ function Create() {
                 onChange={(e) => setPassword(e.target.value)}
               />
 
-              <MDBBtn onClick={signUp} className="mb-4">
+              <MDBBtn onClick={handleSignup} className="mb-4">
                 Create account
               </MDBBtn>
             </MDBCardBody>
