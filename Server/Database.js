@@ -1,17 +1,10 @@
-import express from 'express';
-import cors from 'cors';
-const app = express();
+import mysql from 'mysql';
 
-
-app.use(cors());
-app.use(express.json());
-
-app.post('/api/register', (req, res) => {
-  const { username, password } = req.body;
-  
-  res.json({ message: 'User registered successfully' });
+const db = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: 'secret',
+  database: 'db',
 });
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-});
+export { db };
