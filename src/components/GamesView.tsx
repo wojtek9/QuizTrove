@@ -64,12 +64,9 @@ function Games() {
               alt="..."
             />
             <MDBCardBody className="gamesCardBody">
-              <MDBCardTitle>Card title</MDBCardTitle>
-              <MDBCardText>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </MDBCardText>
-              <MDBBtn href="#">Button</MDBBtn>
+              <MDBCardTitle>Guess the place</MDBCardTitle>
+              <MDBCardText>Can you guess where you are?</MDBCardText>
+              <MDBBtn href="guesstheplace">Button</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
