@@ -15,7 +15,7 @@ function Create() {
 
   async function signUp() {
     let item = { username, password };
-    console.warn(item);
+    console.log(item);
 
     try {
       let result = await fetch("http://localhost:3000/api/register", {
@@ -29,7 +29,7 @@ function Create() {
 
       if (result.ok) {
         result = await result.json();
-        console.warn("result", result);
+        console.log("result", result);
       } else {
         console.error("Request failed with status: " + result.status);
         // Log more details about the response, if needed.

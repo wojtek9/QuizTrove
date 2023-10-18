@@ -26,9 +26,9 @@ function Login() {
               <MDBInput
                 className="w-50 mx-auto"
                 wrapperClass="mb-4"
-                label="Email"
+                label="Username"
                 id="form3"
-                type="email"
+                type="text"
               />
               <MDBInput
                 className="w-50 mx-auto"
