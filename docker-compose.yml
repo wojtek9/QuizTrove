@@ -2,11 +2,17 @@ version: "3.8"
 services:
     quiztrovedb:
         image: mysql:5.7
+        restart: always
+        container_name: db-mysql
         environment:
             MYSQL_DATABASE: db
+            MYSQL_USER: testuser
+            MYSQL_PASSWORD: secret
             MYSQL_ROOT_PASSWORD: secret
         ports:
             - "3306:3306"
+        volumes:
+            - ./dump:/docker-entrypoint-initdb.d
     database-explorer:
         image: phpmyadmin
         restart: always
