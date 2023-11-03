@@ -7,10 +7,10 @@ function Game(file: string, completionText: string) {
   const [displayedValue, setDisplayedValue] = useState("");
   const [inputValue, setInputValue] = useState("");
   const [gameCompleted, setGameCompleted] = useState(false);
-  const [audioArr, setAudioArr] = useState<string[]>([]); // Create separate array instead of a tuple because im lazy
-  const [audio, setAudio] = useState(""); // Set default audio to US pronounciation. Documentation in readme
+  const [audioArr, setAudioArr] = useState<string[]>([]); // Create separate array instead of a tuple cos quickfix
+  const [audio, setAudio] = useState(""); // Set default audio to US pronounciation. Documentation in notes
 
-  // Everything regarding audio is coded horribly in here. Uses separate key/value pair to associate with the correct index and is converted from string to int
+  // Fix the audio implementation. Shouldnt use separate key/value pair to associate with the correct index and is also converted from string to int
 
   const handleButtonClick = async () => {
     setBtnVisible(false);
@@ -27,7 +27,7 @@ function Game(file: string, completionText: string) {
       });
       setAudioArr(values);
 
-      // Shuffle the array using Fisher-Yates algorithm
+      // Shuffle the array using fisher-yates algorithm
       for (let i = allPairs.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [allPairs[i], allPairs[j]] = [allPairs[j], allPairs[i]];
@@ -57,7 +57,7 @@ function Game(file: string, completionText: string) {
       const [correctLanguage] = valueTextPairs[currentPairIndex];
       if (userGuess === correctLanguage.toLowerCase()) {
         if (currentPairIndex === valueTextPairs.length - 1) {
-          setGameCompleted(true); // Mark the game as completed
+          setGameCompleted(true);
           console.log(completionText);
           setDisplayedValue(completionText);
         } else {
