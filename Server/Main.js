@@ -40,7 +40,7 @@ app.post('/api/login', async (req, res) => {
     const user = results[0];
 
     //const passwordMatch = await bcrypt.compare(password, user.password);
-    if (password == user.password) {
+    if (password === user.password) {
       return res.json({ message: 'Login successful' });
     } else {
       return res.status(401).json({ error: 'passwordmatch error' });

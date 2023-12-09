@@ -9,37 +9,23 @@ import {
 } from "mdb-react-ui-kit";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const { login } = useAuth();
   const navigate = useNavigate();
+  const { isLoggedIn } = useAuth();
 
-  async function handleLogin() {
-    let item = { username, password };
-    console.log(item);
-    try {
-      let result = await fetch("http://localhost:3000/api/login", {
-        method: "POST",
-        body: JSON.stringify(item),
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      });
-      if (result.ok) {
-        console.log("success");
-        result = await result.json();
-        console.log("result", result);
-        navigate("/games");
-      } else {
-        console.error("Request failed with status: " + result.status);
-        console.error(await result.text());
-      }
-    } catch (error) {
-      console.error("Error while making the request:", error);
+  const handleLogin = async () => {
+    const isSuccess = await login(username, password);
+    if (isSuccess) {
+      navigate("/");
+    } else {
+      console.log("error");
     }
-  }
+  };
 
   return (
     <MDBContainer className="my-5" style={{ width: "800px" }}>

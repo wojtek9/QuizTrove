@@ -32,7 +32,7 @@ function Create() {
       if (result.ok) {
         result = await result.json();
         console.log("result", result);
-        navigate("/games");
+        navigate("/");
       } else {
         console.error("Request failed with status: " + result.status);
         // Log more details about the response, if needed.
